@@ -48,11 +48,11 @@ mov al, 'I'
 int 0x10
 mov al, 'N'
 int 0x10
-mov al, 'Î'
+mov al, 'I'
 int 0x10
 mov al, 'Z'
 int 0x10
 hlt
-jmp $
+jmp start
 times 510 -($-$$) db 0x0
 dw 0x55AA
