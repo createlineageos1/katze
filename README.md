@@ -1,4 +1,4 @@
-Hoşlandığım kız için yaptığım proje Seni Çok Seviyorum Beril <3
+Hoşlandığım kız için yaptığım proje Seni Çok Seviyorum Zehra <3
 Projeyi derlemek için gerekenler
 1.Linux bir sistem
 2.bir assembler
