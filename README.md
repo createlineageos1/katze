@@ -1,104 +1,82 @@
-Hoşlandığım kız için yaptığım proje Seni Çok Seviyorum Beril <3
+Mini Bootable system
 ---
 
-## 🛠️ Derleme ve Çalıştırma Gereksinimleri
+## 🛠️ Compiling requirements
 
-Bu projeyi derlemek ve çalıştırmak için aşağıdaki araçlara ihtiyacınız olacaktır:
+Requirements to compile this system:
 
-### 1. Sistem Gereksinimi
-* **Linux** tabanlı bir işletim sistemi.
+### 1. System requirements
+* **Linux**/Windows/MacOS X based OS.
 
-### 2. Derleyici (Assembler)
-* Sisteminizde kurulu bir **Assembler** (çevirici).
-    * **fasm** veya **nasm** önerilir.
-    * İleride **gas** (GNU Assembler) desteği de eklenecektir.
+### 2. Assembler
+You will need NASM.
 
-### 3. Opsiyonel: USB Bellek
-* Projenin ikili dosyasını (binary) doğrudan çalıştırmak için **USB bellek**.
-
-### 4. Çalıştırma Ortamı (Emülatör/Sanal Makine)
-Projenin **ikili dosyasını** çalıştırmak için aşağıdaki emülatör veya sanal makinelerden herhangi birini kullanabilirsiniz:
+### 3. Emulator (Optional)
+If ur gonna run the binary files:
 
 * **Qemu**
 * **Bochs**
 * **VMware**
 * **VirtualBox**
-* **Alternatif:** Ayrıca `copy.sh/v86` adresi üzerinden de çalıştırabilirsiniz.
+Is the recommended virtualization tools.
 
 ---
 
-## 🚀 Başlangıç
+## 🚀 How-To-Start
 
-### Adım 1: Assembler Kurulumu
-
-Derleme ve çalıştırma işlemi için Fasm (Flat Assembler) veya Nasm (Netwide Assembler) kullanmanız önerilir.
-Kurmak için:
+### Setup and install your assembler
 
 ### Debian (nasm)
 ```bash
 sudo apt install nasm
 ```
-### Debian (fasm)
-```bash
-sudo apt install fasm
-```
 
 ### Arch Linux (nasm)
 ```bash
 sudo pacman -S nasm
-```
-### Arch Linux (fasm)
-```bash
-sudo pacman -S fasm
+```n -S fasm
 ```
 
-### Diğer dağıtımlar:
+### Windows and MacOS X (nasm)
+```
+https://www.nasm.us/pub/nasm/releasebuilds/ :: Visit this URL to download NASM on your Windows machine.
+```
 
-[Nasm](https://pkgs.org/search/?q=nasm)
-[Fasm](https://pkgs.org/search/?q=fasm)
-
-### Adım 2: Projeyi Derleme ve Çalıştırma
-Projeyi klonlayalım dizin ve içine girelim:
+### Compiling the project
+Let's clone this project:
 
 ```bash
-git clone https://github.com/developer-kenan/BeriliumOs.git
-cd BeriliumOs
+git clone https://github.com/createlineageos1/katze.git
+cd katze
 ```
 
-Fasm syntax ile derlemek için:
+Compiling with NASM:
 
 ```bash
-cd fasm_syntax
-fasm beril.asm beril.bin
-dd if=beril of=beril.img
+cd katze/fasm-syntax
+nasm -f bin boot16.asm -o katze
+dd if=katze of=katze.img
 ```
 
-Nasm syntax ile derlemek için:
-
-```bash
-cd nasm_syntax
-nasm -f bin beril.asm -o beril
-dd if=beril of=beril.img
-```
-
-## Tersine mühendislik
-### (Proje zaten açık kaynak kodlu ama siz bilirsiniz)
+## Reverse engineering
 
 ### Nasm:
 
 ```bash
-ndisasm beril
+ndisasm katze
 ```
 
 ### Fasm:
 
 ```bash
-xxd beril.bin
+xxd katze.bin
 ```
 
 Veya:
 
 ```bash
-hexdump -C beril.bin
+hexdump -C katze.bin
 ```
 
+## Thanks to....
+My Turkish friend, Kenan. Thanks to him, this system is based off BeriliumOS. Again, special thanks to Kenan!
