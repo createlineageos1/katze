@@ -35,7 +35,6 @@ sudo apt install nasm
 ### Arch Linux (nasm)
 ```bash
 sudo pacman -S nasm
-```n -S fasm
 ```
 
 ### Windows and MacOS X (nasm)
