@@ -72,7 +72,7 @@ ndisasm katze
 xxd katze.bin
 ```
 
-Veya:
+Or:
 
 ```bash
 hexdump -C katze.bin
